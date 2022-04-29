@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using SuperP.PlayerScripts;
 using SuperP.WeaponData;
 
@@ -12,6 +13,9 @@ namespace SuperP
         //[SerializeField] float bulletForce = 100f;
         [SerializeField] Transform shoot;
         [SerializeField] Camera cam;
+
+        [SerializeField] Text guntext;
+
         [SerializeField] ParticleSystem gunEffect;
         [SerializeField] GameObject impactEffect;
         [SerializeField] AudioSource sounds;
@@ -23,8 +27,12 @@ namespace SuperP
         // }
 
         private void Start() {
+            gunData.current_Ammo = gunData.magSize;
+            gunData.ammo = gunData.mexAmmo;
+
             PlayerShoot.shootInput += Shoot;
             PlayerShoot.reloadInput += Reload;
+            UpdateText();
         }
 
         private void OnDisable() {
@@ -33,7 +41,8 @@ namespace SuperP
         }
 
         public void Shoot(){
-            if (gunData.ammo > 0){
+            if (gunData.current_Ammo > 0){
+                gunData.current_Ammo--;
                 sounds.Play();
                 gunEffect.Play();
                 RaycastHit hit;
@@ -53,11 +62,23 @@ namespace SuperP
                 // rb.AddForce(shootdir,ForceMode.Impulse);
                 // Destroy(B,10f);
             }
+            UpdateText();
         }
         public void Reload(){
-
+            StartCoroutine(DoReload());
         }
 
+        IEnumerator DoReload(){
+            int reloadAmmo = gunData.magSize - gunData.current_Ammo;
+            yield return new WaitForSeconds(gunData.reloadtime);
+            gunData.ammo -= reloadAmmo;
+            gunData.current_Ammo += reloadAmmo;
+            UpdateText();
+        }
+
+        private void UpdateText(){
+            guntext.text = "Ammo: "+ gunData.current_Ammo + "/" + gunData.ammo;
+        }
     }
 }
 

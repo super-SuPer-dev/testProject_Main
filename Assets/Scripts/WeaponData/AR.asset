@@ -16,6 +16,8 @@ MonoBehaviour:
   prefab: {fileID: 1500049739712634786, guid: c000259e21b2fc24dac9d6b1ab9b7718, type: 3}
   bullet_prefab: {fileID: 3740800843729458941, guid: bbbdb3d0c96cd6a4fa2a3c9dc228ca3b, type: 3}
   danmage: 20
-  ammo: 50
-  magSize: 200
+  current_Ammo: 40
+  ammo: 200
+  mexAmmo: 200
+  magSize: 50
   reloadtime: 1.5

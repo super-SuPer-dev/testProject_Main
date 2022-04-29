@@ -14,7 +14,9 @@ namespace SuperP.WeaponData
 
         [Header("Weapon Info")]
         public float danmage;
+        public int current_Ammo;
         public int ammo;
+        public int mexAmmo;
         public int magSize;
 
         public float reloadtime;
