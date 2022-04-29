@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a85cd2b9c64474ca9f60b69f4985e5, type: 3}
+  m_Name: AR
+  m_EditorClassIdentifier: 
+  name: PewPew
+  prefab: {fileID: 1500049739712634786, guid: c000259e21b2fc24dac9d6b1ab9b7718, type: 3}
+  bullet_prefab: {fileID: 3740800843729458941, guid: bbbdb3d0c96cd6a4fa2a3c9dc228ca3b, type: 3}
+  danmage: 20
+  ammo: 50
+  magSize: 200
+  reloadtime: 1.5
