@@ -10,7 +10,7 @@ namespace SuperP
     public class Gun : MonoBehaviour
     {
         [SerializeField] WeaponDataObject gunData;
-        //[SerializeField] float bulletForce = 100f;
+        // [SerializeField] float bulletForce = 100f;
         [SerializeField] Transform shoot;
         [SerializeField] Camera cam;
 
@@ -19,12 +19,6 @@ namespace SuperP
         [SerializeField] ParticleSystem gunEffect;
         [SerializeField] GameObject impactEffect;
         [SerializeField] AudioSource sounds;
-
-        // private void Update() {
-        //     RaycastHit inn;
-        //     Physics.Raycast(shoot.transform.position,transform.TransformDirection(Vector3.forward),out inn,100f);
-        //     Debug.DrawRay(transform.position,transform.TransformDirection(Vector3.forward) * inn.distance, Color.red);
-        // }
 
         private void Start() {
             gunData.current_Ammo = gunData.magSize;

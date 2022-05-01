@@ -19,7 +19,7 @@ namespace SuperP
                 Destroy(gameObject);
             }
         }
-
+        
         public void Danmage(float dameageAmount){
             health -= dameageAmount;
             Color color = mat.material.color;
